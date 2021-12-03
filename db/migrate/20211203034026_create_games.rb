@@ -6,5 +6,6 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :review
       t.string :status
       t.integer :user_id
+    end
   end
 end
