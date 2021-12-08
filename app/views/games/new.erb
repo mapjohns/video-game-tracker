@@ -1,0 +1,15 @@
+<h3>Add a New Game to Your Tracker</h3>
+<form method = "POST" action = "/games">
+<label>Title: </label> <input type = "text" name = "title"><br>
+<label>Rating: </label> <input type = "text" name = "rating"><br>
+<label>Review: </label> <input type = "text" name = "review"><br>
+
+<input type="radio" id="NS" name="status" value="Not Yet Started">
+<label for="NS">Not Yet Started</label><br>
+<input type="radio" id="IP" name="status" value="In-Progress">
+<label for="IP">In-Progress</label><br>
+<input type="radio" id="C" name="status" value="Completed">
+<label for="C">Completed</label><br>
+<input type="submit" value="Add Game">
+
+</form>

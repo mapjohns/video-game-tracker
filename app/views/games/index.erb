@@ -1,0 +1,9 @@
+<h2>Welcome <%=@user.username%> Here Are the Games You Are Currently Tracking</h2>
+<h3>Currently Playing</h3>
+<ol>
+<% @user.games.each do |game| %>
+    <%if game.status == "In-Progress"%>
+    <li><%=game.title%></li>
+    <% end %>
+<% end %>
+</ol>
