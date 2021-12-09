@@ -1,9 +1,28 @@
 <h2>Welcome <%=@user.username%> Here Are the Games You Are Currently Tracking</h2>
-<h3>Currently Playing</h3>
+<br>
+<h3>In-Progress</h3>
 <ol>
 <% @user.games.each do |game| %>
     <%if game.status == "In-Progress"%>
-    <li><%=game.title%></li>
+    <li><a href = "/games/<%=game.id%>"><%=game.title%></a></li>
+    <% end %>
+<% end %>
+</ol>
+
+<h3>Not Yet Started</h3>
+<ol>
+<% @user.games.each do |game| %>
+    <%if game.status == "Not Yet Started"%>
+    <li><a href = "/games/<%=game.id%>"><%=game.title%></a></li>
+    <% end %>
+<% end %>
+</ol>
+
+<h3>Completed</h3>
+<ol>
+<% @user.games.each do |game| %>
+    <%if game.status == "Completed"%>
+    <li><a href = "/games/<%=game.id%>"><%=game.title%></a></li>
     <% end %>
 <% end %>
 </ol>
