@@ -1,3 +1,12 @@
+<p>Status: <%=@game.status%></p>
 <h1><%=@game.title%></h1>
 <h2>Rating: <%=@game.rating%></h2>
 <p>Thoughts: <%=@game.review%></p>
+<form action="/games/<%=@game.id%>/edit">
+    <input type="submit" value="Update Game" />
+</form>
+<br>
+<form action="/games/<%=@game.id%>" method="post">
+<input id="hidden" type="hidden" name="_method" value="delete">
+<input type="submit" value="Remove From Library">
+</form>
