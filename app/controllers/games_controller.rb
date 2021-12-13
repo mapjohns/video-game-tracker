@@ -1,12 +1,20 @@
 class GamesController < ApplicationController
     get '/games' do
         @user = current_user
-        erb :'games/index'
+        if logged_in?
+            erb :'games/index'
+        else
+            redirect '/'
+        end
     end
 
     get '/games/new' do
         @user = current_user
-        erb :'games/new'
+        if logged_in?
+            erb :'games/new'
+        else
+            redirect '/'
+        end
     end
 
     post '/games' do
@@ -15,20 +23,28 @@ class GamesController < ApplicationController
     end
 
     get '/games/:id' do
-        @game = current_user.games.find_by(:id=>params[:id])
-        if @game.nil?
-            redirect "/games"
+        if logged_in?
+            @game = current_user.games.find_by(:id=>params[:id])
+            if @game.nil?
+                redirect "/games"
+            else
+                erb :'games/show'
+            end
         else
-            erb :'games/show'
+            redirect '/'
         end
     end
 
     get '/games/:id/edit' do
-        @game = current_user.games.find_by(:id=>params[:id])
-        if @game.nil?
-            redirect "/games"
+        if logged_in?
+            @game = current_user.games.find_by(:id=>params[:id])
+            if @game.nil?
+                redirect "/games"
+            else
+                erb :'games/edit'
+            end
         else
-            erb :'games/edit'
+            redirect '/'
         end
     end
 
@@ -44,12 +60,3 @@ class GamesController < ApplicationController
         redirect "/games" 
     end
 end
-
-# t.string :title
-# t.integer :rating
-# t.string :review
-# t.string :status
-# t.integer :user_id
-##Add Date Started and Date Completed
-
-# Center Statuses on Games Library Page
