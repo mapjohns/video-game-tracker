@@ -12,7 +12,7 @@ gem 'pry'
 gem 'tux'
 gem 'rack-flash3'
 gem 'bcrypt'
-
+gem 'sinatra-flash'
 
 group :test do
   gem 'launchy'
