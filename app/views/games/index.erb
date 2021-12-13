@@ -1,14 +1,7 @@
 <h2>Welcome <%=@user.username%> Here Are the Games You Are Currently Tracking</h2>
+<div id="AddButton"><button type="button" onclick="location.href='/games/new'">Add Game to Library!</button></div>
 <br>
-<h3>In-Progress</h3>
-<ol>
-<% @user.games.each do |game| %>
-    <%if game.status == "In-Progress"%>
-    <li><a href = "/games/<%=game.id%>"><%=game.title%></a></li>
-    <% end %>
-<% end %>
-</ol>
-
+<div class ="test">
 <h3>Not Yet Started</h3>
 <ol>
 <% @user.games.each do |game| %>
@@ -17,7 +10,18 @@
     <% end %>
 <% end %>
 </ol>
-
+</div>
+<div class ="test">
+<h3>In-Progress</h3>
+<ol>
+<% @user.games.each do |game| %>
+    <%if game.status == "In-Progress"%>
+    <li><a href = "/games/<%=game.id%>"><%=game.title%></a></li>
+    <% end %>
+<% end %>
+</ol>
+</div>
+<div class ="test">
 <h3>Completed</h3>
 <ol>
 <% @user.games.each do |game| %>
@@ -26,3 +30,4 @@
     <% end %>
 <% end %>
 </ol>
+</div>
