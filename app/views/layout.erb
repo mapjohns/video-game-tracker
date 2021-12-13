@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 	<title>My Video Game Tracking</title>
 </head>
 <body>
+	<% if logged_in? %>
+	<p><a href = "/games">Games</a> | <a href = "/logout">Logout</a></p>
+	<%end%>
 	<%= yield %>
 </body>
 </html>
