@@ -7,7 +7,9 @@
 </head>
 <body>
 	<% if logged_in? %>
-	<p><a href = "/games">Games</a> | <a href = "/logout">Logout</a></p>
+	<p id="TopLinks"><a href = "/games">Games</a> | <a href = "/logout">Logout</a></p>
+	<% else %>
+	<p id="TopLinks"><a href = "/">Home</a></p>
 	<%end%>
 	<%= yield %>
 </body>
