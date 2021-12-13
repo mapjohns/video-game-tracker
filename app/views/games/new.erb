@@ -1,15 +1,15 @@
-<h3>Add a New Game to Your Tracker</h3>
+<h3 class = "plswork">Add a New Game to Your Tracker</h3>
 <form method = "POST" action = "/games">
-<label>Title: </label> <input type = "text" name = "title"><br>
-<label>Rating: </label> <input type = "text" name = "rating"><br>
-<label>Review: </label> <input type = "text" name = "review"><br>
+<label>Title: </label> <input class = "NewGame" type = "text" name = "title"><br><br>
+<label>Rating: </label> <input class = "NewGame" type = "text" name = "rating"><br><br>
+<label>Review: </label> <textarea id = "Review" type = "text" name = "review" rows="4" cols="50"></textarea><br><br>
 
 <input type="radio" id="NS" name="status" value="Not Yet Started" >
 <label for="NS">Not Yet Started</label><br>
 <input type="radio" id="IP" name="status" value="In-Progress">
 <label for="IP">In-Progress</label><br>
-<input type="radio" id="C" name="status" value="Completed">
-<label for="C">Completed</label><br>
+<input "NewGame" type="radio" id="C" name="status" value="Completed">
+<label for="C">Completed</label><br><br>
 <input type="submit" value="Add Game">
 
 </form>

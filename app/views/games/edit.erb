@@ -1,14 +1,16 @@
+<h3>Update: <%=@game.title%></h3>
 <form action="/games/<%=@game.id%>" method = "POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
-<label>Title: </label> <input type = "text" name = "title" value = "<%=@game.title%>"><br>
-<label>Rating: </label> <input type = "text" name = "rating" value = "<%=@game.rating%>"><br>
-<label>Review: </label> <input type = "text" name = "review" value = "<%=@game.review%>"><br>
+<label>Title: </label> <input type = "text" name = "title" value = "<%=@game.title%>"><br><br>
+<label>Rating: </label> <input type = "text" name = "rating" value = "<%=@game.rating%>"><br><br>
+<label>Review: </label> <textarea name = "review" rows="4" cols="50" ><%=@game.review%></textarea><br><br>
+
 
 <input type="radio" id="NS" name="status" value="Not Yet Started" <%='checked' if @game.status == "Not Yet Started" %> >
 <label for="NS">Not Yet Started</label><br>
 <input type="radio" id="IP" name="status" value="In-Progress" <%='checked' if @game.status == "In-Progress" %>>
 <label for="IP">In-Progress</label><br>
 <input type="radio" id="C" name="status" value="Completed" <%='checked' if @game.status == "Completed" %>>
-<label for="C">Completed</label><br>
-<input type="submit" value="Update">
+<label for="C">Completed</label><br><br>
+<input type="submit" value="Update Game">
 </form>
