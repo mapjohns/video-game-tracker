@@ -16,12 +16,20 @@ class GamesController < ApplicationController
 
     get '/games/:id' do
         @game = current_user.games.find_by(:id=>params[:id])
-        erb :'games/show'
+        if @game.nil?
+            redirect "/games"
+        else
+            erb :'games/show'
+        end
     end
 
     get '/games/:id/edit' do
         @game = current_user.games.find_by(:id=>params[:id])
-        erb :'games/edit'
+        if @game.nil?
+            redirect "/games"
+        else
+            erb :'games/edit'
+        end
     end
 
     patch '/games/:id' do
