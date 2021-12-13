@@ -29,6 +29,12 @@ class GamesController < ApplicationController
         @game.update(title: params[:title], rating: params[:rating], review: params[:review], status: params[:status])
         redirect "/games/#{@game.id}"
     end
+
+    delete '/games/:id' do
+        @game = current_user.games.find_by(:id=>params[:id])
+        @game.delete
+        redirect "/games" 
+    end
 end
 
 # t.string :title
@@ -37,3 +43,5 @@ end
 # t.string :status
 # t.integer :user_id
 ##Add Date Started and Date Completed
+
+# Center Statuses on Games Library Page
