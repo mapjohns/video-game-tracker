@@ -2,7 +2,7 @@
 <form action="/games/<%=@game.id%>" method = "POST">
 <input id="hidden" type="hidden" name="_method" value="patch">
 <label>Title: </label> <input type = "text" name = "title" value = "<%=@game.title%>"><br><br>
-<label>Rating: </label> <input type = "text" name = "rating" value = "<%=@game.rating%>"><br><br>
+<label>Rating out of 10: </label> <input name = "rating" value = "<%=@game.rating%>"  type="number"  min="0" max="10"></input><br><br>
 <label>Review: </label> <textarea name = "review" rows="4" cols="50" ><%=@game.review%></textarea><br><br>
 
 
