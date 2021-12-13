@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
     get '/signup' do
-        erb :'users/signup'
+		if logged_in?
+			redirect '/games'
+		else
+        	erb :'users/signup'
+		end
     end
 
     post '/signup' do
@@ -27,7 +31,7 @@ class UsersController < ApplicationController
 		if @user && @user.authenticate(params[:password])
 		  session[:user_id] = @user.id
 		#   binding.pry
-		  redirect "/"
+		  redirect "/games"
 		else
 		  redirect "/failure"
 		end
