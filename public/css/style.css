@@ -1,6 +1,6 @@
-h2 {
-    color: red;
-    margin-left: 20px;
+h2, ol {
+    color: blue;
+    text-align: left;
   }
 
 div.test {
@@ -26,9 +26,8 @@ img {
   margin-right: auto;
 }
 
-div#HomePage h1, p{
+#HomePage, #TopLinks{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 };
-}
