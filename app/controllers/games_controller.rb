@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+    
     get '/games' do
         @user = current_user
         if logged_in?
